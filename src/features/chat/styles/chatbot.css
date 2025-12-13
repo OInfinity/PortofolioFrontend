@@ -1,0 +1,56 @@
+.chatbot-emoji {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #4a4aff;
+  color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: all 2s ease;
+}
+
+/* Overlay zone for intro text */
+.chatbot-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  z-index: 999;
+}
+
+/* Typing bubble */
+.chatbot-text {
+  background: #1e1e2f;
+  color: #fff;
+  padding: 16px 22px;
+  border-radius: 12px;
+  font-size: 18px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  white-space: nowrap;
+  margin-top: 200px; /* 🆕 Adds space between emoji and message */
+
+}
+
+.chatbot-text.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
