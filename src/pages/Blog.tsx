@@ -3,25 +3,25 @@ import { ThemeContext } from "@/lib/ThemeContext";
 
 export default function Blog() {
   const { theme } = useContext(ThemeContext);
-
+{/* Topic: Notes on keeping interfaces clean without sacrificing speed or clarity. */}
   const posts = [
     {
-      title: "Design Decisions Behind My Portfolio Interface",
+      title: "Why Most Performance Problems Aren’t Technical",
       summary:
-        "A breakdown of the layout, visual hierarchy, and trade-offs made while building this portfolio.",
-      link: "#",
+        "How product decisions, unclear requirements, and UX choices often impact performance more than code does...",
+      link: "https://blog-frontend-three-blue.vercel.app/post/why-most-performance-problems-aren-t-technical",
     },
     {
-      title: "Lessons Learned While Deploying a Full-Stack Application",
+      title: "Understanding Technical Debt Beyond the Buzzword",
       summary:
-        "What worked, what didn’t, and what I improved while deploying a real project.",
-      link: "#",
+        "What technical debt really means, when it’s acceptable, and how teams should manage it consciously...",
+      link: "https://blog-frontend-three-blue.vercel.app/post/understanding-technical-debt-beyond-the-buzzword",
     },
     {
-      title: "Balancing Visual Design and Performance in Web Projects",
+      title: "Building for Today While Preparing for Tomorrow",
       summary:
-        "Notes on keeping interfaces clean without sacrificing speed or clarity.",
-      link: "#",
+        "Strategies for making pragmatic decisions that don’t block future change or improvement...",
+      link: "https://blog-frontend-three-blue.vercel.app/post/building-for-today-while-preparing-for-tomorrow",
     },
   ];
 
@@ -53,14 +53,8 @@ export default function Blog() {
         {/* Posts */}
         <div className="divide-y divide-gray-300/20 dark:divide-white/10">
           {posts.map((post, index) => (
-            <a
-              key={index}
-              href={post.link}
-              className="block py-8 transition-colors group"
-            >
-              <h3 className="text-xl md:text-2xl font-semibold mb-2
-                             text-gray-900 dark:text-gray-100
-                             group-hover:text-cyan-500">
+            <div key={index} className="py-8">
+              <h3 className="text-xl md:text-2xl font-semibold mb-2">
                 {post.title}
               </h3>
 
@@ -68,10 +62,15 @@ export default function Blog() {
                 {post.summary}
               </p>
 
-              <span className="text-sm font-medium text-cyan-600 dark:text-cyan-400">
-                Read note →
-              </span>
-            </a>
+              <a
+                href={post.link}
+                className="inline-flex items-center text-sm font-medium
+                           text-cyan-600 dark:text-cyan-400
+                           hover:underline"
+              >
+                Read more →
+              </a>
+            </div>
           ))}
         </div>
       </div>

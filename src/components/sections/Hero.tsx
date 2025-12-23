@@ -3,7 +3,7 @@ import { ThemeContext } from "@/lib/ThemeContext";
 import NeuralNetBackground from "@/components/visuals/NeuralNetBackground";
 import NeuralGlowDivider from "@/components/visuals/NeuralGlowDivider";
 import { motion } from "framer-motion";
-import { FaLinkedin, FaTwitter, FaEnvelope, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaEnvelope, FaGithub } from "react-icons/fa";
 
 export default function Hero() {
   const { theme } = useContext(ThemeContext);
@@ -40,7 +40,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          Welcome to the Future
+        KEEP LEARNING - STAY STRONG
         </motion.div>
 
         {/* Main Title */}
@@ -55,7 +55,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 1 }}
         >
-          Tonton
+         Ouonogo
         </motion.h1>
 
         {/* Tagline */}
@@ -66,7 +66,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 1 }}
         >
-          Computer Science Engineer | Software & Network Innovator
+          Computer Science Engineer | Software & Network Systems
         </motion.h2>
 
         {/* Mission Statement */}
@@ -77,7 +77,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7, duration: 1 }}
         >
-          I build modern web interfaces and network-driven applications through project-based learning.
+          I build end-to-end web and networked applications with a focus on system design and reliability.
         </motion.p>
 
         {/* Buttons */}
@@ -88,25 +88,32 @@ export default function Hero() {
           transition={{ delay: 1, duration: 1 }}
         >
           <button
+            onClick={() =>
+              document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
+            }
             className="px-7 py-2.5 text-base font-semibold rounded-lg
-                       bg-sky-600 text-white shadow-lg hover:bg-sky-700
-                       dark:bg-[#06B6D4] dark:text-black dark:hover:bg-[#22D3EE]
-                       transition-all duration-300"
+                      bg-sky-600 text-white shadow-lg hover:bg-sky-700
+                      dark:bg-[#06B6D4] dark:text-black dark:hover:bg-[#22D3EE]
+                      transition-all duration-300"
           >
             Explore My Work
           </button>
 
           <button
+            onClick={() =>
+              document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+            }
             className="px-7 py-2.5 text-base font-semibold rounded-lg
-                       border border-sky-600 text-sky-700 hover:bg-sky-100
-                       dark:border-[#06B6D4] dark:text-[#06B6D4] dark:hover:bg-[#06B6D4]/10
-                       backdrop-blur-md transition-all duration-300"
+                      border border-sky-600 text-sky-700 hover:bg-sky-100
+                      dark:border-[#06B6D4] dark:text-[#06B6D4] dark:hover:bg-[#06B6D4]/10
+                      backdrop-blur-md transition-all duration-300"
           >
             Get In Touch
           </button>
         </motion.div>
 
-        {/* Social Media Icons */}
+
+        Social Media Icons
         <motion.div
           className="mt-8 flex justify-center gap-8 text-[22px]
                      text-gray-500 dark:text-[#9CA3AF] transition-colors duration-500"
@@ -114,16 +121,18 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.3, duration: 1 }}
         >
-          <a href="#" className="hover:text-sky-600 dark:hover:text-[#06B6D4] transition"><FaGithub /></a>
-          <a href="#" className="hover:text-sky-600 dark:hover:text-[#06B6D4] transition"><FaLinkedin /></a>
-          <a href="#" className="hover:text-sky-600 dark:hover:text-[#06B6D4] transition"><FaTwitter /></a>
-          <a href="#" className="hover:text-sky-600 dark:hover:text-[#06B6D4] transition"><FaEnvelope /></a>
+          <a href="https://github.com/OInfinity" className="hover:text-sky-600 dark:hover:text-[#06B6D4] transition"><FaGithub /></a>
+          <a href="www.linkedin.com/in/oumar-ouonogo-5a7b03331" className="hover:text-sky-600 dark:hover:text-[#06B6D4] transition"><FaLinkedin /></a>
+          <a href="mailto:oououmar01@gmail.com?subject=Contact&body=Hi Omar," className="hover:text-sky-600 dark:hover:text-[#06B6D4] transition"><FaEnvelope /></a>
         </motion.div>
       </div>
+      
 
       {/* ↓ Scroll Down (moved lower and clickable) */}
-      <a href="#about" 
-         className="mt-8 group"
+      <a onClick={() =>
+          document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
+        }
+        className="mt-8 group cursor-pointer z-10"
       >
         <motion.div
           className="text-sky-600 dark:text-[#22D3EE] text-[36px] animate-bounce transition-colors duration-500 group-hover:translate-y-1"
@@ -134,6 +143,7 @@ export default function Hero() {
           ↓
         </motion.div>
       </a>
+
 
       {/* Neural Divider */}
       <div className="absolute bottom-0 left-0 w-full">

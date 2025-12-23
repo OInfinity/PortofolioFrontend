@@ -4,7 +4,7 @@ import Projects from "@/pages/Projects";
 import Blog from "@/pages/Blog";
 import Skills from "@/components/sections/CoreTechnologies ";
 import Contact from "@/pages/Contact";
-import CoursePlatforms from "@/components/sections/CoursePlatforms";
+// import CoursePlatforms from "@/components/sections/CoursePlatforms";
 
 export default function Home() {
   return (
@@ -33,9 +33,9 @@ export default function Home() {
         <Contact />
       </section>
 
-      <section id="coursePlatforms">
+      {/* <section id="coursePlatforms">
         <CoursePlatforms />
-      </section>
+      </section> */}
     </main>
   );
 }

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ThemeContext } from "../../lib/ThemeContext";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import NeuralGlowDivider from "@/components/visuals/NeuralGlowDivider";
 
 export default function Footer() {
@@ -59,40 +59,7 @@ export default function Footer() {
 
         {/* Social Icons */}
         <div className="flex justify-center md:justify-end space-x-5">
-          <a
-            href="https://github.com/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`transition transform hover:scale-110 ${hoverColor}`}
-          >
-            <FaGithub size={22} />
-          </a>
-          <a
-            href="https://linkedin.com/in/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`transition transform hover:scale-110 ${hoverColor}`}
-          >
-            <FaLinkedin size={22} />
-          </a>
-          <a
-            href="https://twitter.com/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`transition transform hover:scale-110 ${hoverColor}`}
-          >
-            <FaTwitter size={22} />
-          </a>
-        </div>
-      </div>
-
-      {/* Divider */}
-      <div className={`border-t ${borderClass}`}></div>
-
-      {/* Bottom Section */}
-      <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center text-sm space-y-3 md:space-y-0">
-        <p>© {new Date().getFullYear()} MyPortfolio. All rights reserved.</p>
-        <button
+          <button
           onClick={scrollToTop}
           className={`px-3 py-1 rounded-full transition-colors ${
             theme === "dark"
@@ -102,6 +69,15 @@ export default function Footer() {
         >
           ↑ Top
         </button>
+        </div>
+      </div>
+
+      {/* Divider */}
+      <div className={`border-t ${borderClass}`}></div>
+
+      {/* Bottom Section */}
+      <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center text-sm space-y-3 md:space-y-0">
+        <p>© {new Date().getFullYear()} MyPortfolio. All rights reserved.</p>
       </div>
 
       {/* ⚡ Neural Glow Divider at the VERY BOTTOM */}

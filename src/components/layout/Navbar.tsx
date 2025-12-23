@@ -2,6 +2,9 @@ import { useState, useEffect, useContext } from "react";
 import Sidebar from "./Sidebar";
 import { ThemeContext } from "../../lib/ThemeContext";
 
+// ✅ import profile image
+import profileImage from "../../assets/profile.jpg";
+
 export default function Navbar() {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +25,11 @@ export default function Navbar() {
       const scrollPos = window.scrollY + window.innerHeight / 3;
       for (const id of sections) {
         const el = document.getElementById(id);
-        if (el && el.offsetTop <= scrollPos && el.offsetTop + el.offsetHeight > scrollPos) {
+        if (
+          el &&
+          el.offsetTop <= scrollPos &&
+          el.offsetTop + el.offsetHeight > scrollPos
+        ) {
           setActiveSection(id);
           break;
         }
@@ -35,17 +42,32 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 w-full z-50 transition-colors ${
-        theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-gray-900 shadow-md"
-      }`}>
+      <nav
+        className={`fixed top-0 left-0 w-full z-50 transition-colors ${
+          theme === "dark"
+            ? "bg-gray-900 text-white"
+            : "bg-white text-gray-900 shadow-md"
+        }`}
+      >
         <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
-          {/* Logo */}
-          <h1
-            className="font-bold text-xl cursor-pointer"
+          {/* Profile Image (replaces Welcome) */}
+          <button
             onClick={() => handleScroll("home")}
+            className="flex items-center focus:outline-none"
+            aria-label="Go to home"
           >
-            MyPortfolio
-          </h1>
+            <img
+              src={profileImage}
+              alt="Profile"
+              className={`w-9 h-9 rounded-full object-cover transition-transform
+                hover:scale-105
+                ${
+                  theme === "dark"
+                    ? "ring-2 ring-gray-700"
+                    : "ring-2 ring-gray-200"
+                }`}
+            />
+          </button>
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center space-x-6">
@@ -69,7 +91,9 @@ export default function Navbar() {
             <button
               onClick={toggleTheme}
               className={`ml-4 px-3 py-1 rounded-lg ${
-                theme === "dark" ? "bg-gray-800 text-white" : "bg-gray-200 text-gray-900"
+                theme === "dark"
+                  ? "bg-gray-800 text-white"
+                  : "bg-gray-200 text-gray-900"
               }`}
             >
               {theme === "dark" ? "☀️" : "🌙"}
@@ -82,13 +106,18 @@ export default function Navbar() {
             <button
               onClick={toggleTheme}
               className={`px-2 py-1 rounded-lg ${
-                theme === "dark" ? "bg-gray-800 text-white" : "bg-gray-200 text-gray-900"
+                theme === "dark"
+                  ? "bg-gray-800 text-white"
+                  : "bg-gray-200 text-gray-900"
               }`}
             >
               {theme === "dark" ? "☀️" : "🌙"}
             </button>
 
-            <button onClick={() => setIsOpen(true)} className="focus:outline-none text-2xl">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="focus:outline-none text-2xl"
+            >
               ☰
             </button>
           </div>

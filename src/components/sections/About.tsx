@@ -50,14 +50,14 @@ export default function About() {
           </p>
 
           <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
-            I work on full-stack applications — handling user interfaces, 
+            I work on full-stack applications, handling user interfaces, 
             application logic, API communication, and deployment. This includes building frontends 
             with modern frameworks, connecting them to backend services, and ensuring that data flows 
             reliably between components over the network.
           </p>
 
           <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
-            My goal is to build depth by improving existing implementations and understanding design trade-offs.
+            I build depth by designing and improving systems through hands-on iteration.
           </p>
           
           {/* Focus Areas */}

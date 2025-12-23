@@ -93,7 +93,7 @@ export default function Contact() {
               <p className="font-semibold mb-3">Online presence</p>
               <div className="flex gap-5 text-xl text-gray-500 dark:text-gray-400">
                 <a
-                  href="https://github.com/YOUR_GITHUB_USERNAME"
+                  href="https://github.com/OInfinity"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-cyan-600 dark:hover:text-cyan-400 transition"
@@ -103,7 +103,7 @@ export default function Contact() {
                 </a>
 
                 <a
-                  href="https://www.linkedin.com/in/YOUR_LINKEDIN_USERNAME"
+                  href="https://www.linkedin.com/in/oumar-ouonogo-5a7b03331"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-cyan-600 dark:hover:text-cyan-400 transition"
